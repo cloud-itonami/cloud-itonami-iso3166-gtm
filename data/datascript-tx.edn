@@ -1,0 +1,23 @@
+;; data/datascript-tx.edn — DataScript tx-data derived from src/statute/facts.cljc
+;; `statute.facts/catalog` (ADR-2607141700 Wave 0). Same shape as sibling files.
+
+[#:statute{:id "gtm.codigo-comercio-decreto-2-70"
+           :title "Código de Comercio (Decreto N.º 2-70)"
+           :jurisdiction "GTM"
+           :kind :law
+           :law-number "Decreto N.º 2-70"
+           :url "https://www.wipo.int/edocs/lexdocs/laws/es/gt/gt010es.pdf"
+           :url-provenance :official-wipo-lex-mirror
+           :enacted-date "1970-01-28"
+           :retrieved-at "2026-07-16"
+           :topic [:corporate-governance :incorporation]}
+ #:statute{:id "gtm.ley-acceso-informacion-publica-decreto-57-2008"
+           :title "Ley de Acceso a la Información Pública (Decreto N.º 57-2008)"
+           :jurisdiction "GTM"
+           :kind :law
+           :law-number "Decreto N.º 57-2008"
+           :url "https://observatoriop10.cepal.org/es/instrumento/ley-acceso-la-informacion-publica-decreto-no-57-2008"
+           :url-provenance :official-cepal-observatorio
+           :enacted-date "2008-10-23"
+           :retrieved-at "2026-07-16"
+           :topic [:information-disclosure :transparency]}]
