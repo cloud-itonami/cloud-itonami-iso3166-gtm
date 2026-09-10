@@ -37,7 +37,7 @@ twice, enforced off dedicated `:drafted?`/`:submitted?` booleans, never
 a `:status` value.
 
 Check 3 is deliberately **value-conditional, not a blanket rule**:
-`test/marketentry/governor_contract_test.clj`'s
+`test/marketentry/governor_contract_test.kotoba`'s
 `precalificacion-ceiling-mismatch-does-not-fire-for-a-correct-match`
 proves a Q.500,000 (Cotización-tier) engagement that is genuinely
 Precalificado proceeds through the ordinary escalate-then-approve path
@@ -74,7 +74,7 @@ individuales o jurídicas ... a través de un proceso de INSCRIPCIÓN Y
 PRECALIFICACIÓN'.
 `marketentry.facts/required-tier` + `marketentry.facts/precalificacion-required?`
 expose ONLY this independently-confirmed value ladder -- see
-`test/marketentry/facts_test.clj`'s
+`test/marketentry/facts_test.kotoba`'s
 `required-tier-follows-the-statutory-ladder`.
 
 **Guatemala's Registro Mercantil is, by contrast with Honduras's
@@ -85,7 +85,7 @@ estar inscrito ante el **Registro Mercantil General** de la República
 de Guatemala' -- i.e. one GENERAL registry, not a per-department one.
 This repo's `marketentry.facts` reuses the SAME Código de Comercio
 (Decreto N.º 2-70) citation already established in this repo's own
-`src/statute/facts.cljc` for that requirement -- never a second,
+`src/statute/facts.kotoba` for that requirement -- never a second,
 different one -- and deliberately does NOT include a `rep-*`
 (mandatory-foreign-representative) sub-schema the way Honduras's
 `marketentry.facts` does: an attempt this session to re-open the WIPO
@@ -107,8 +107,8 @@ construction.** Two independent layers enforce this:
 - `marketentry.phase`'s phase table (`phase 0` through `phase 3`)
   never puts `:filing/draft` or `:filing/submit` in any phase's
   `:auto` set -- see `marketentry.phase`'s own docstring and
-  `test/marketentry/phase_test.clj`'s `filing-submit-never-auto`, plus
-  `test/marketentry/governor_contract_test.clj`'s
+  `test/marketentry/phase_test.kotoba`'s `filing-submit-never-auto`, plus
+  `test/marketentry/governor_contract_test.kotoba`'s
   `filing-draft-and-submit-never-auto-commit`.
 
 The actor may intake an engagement, assess a jurisdiction and draft a
@@ -211,7 +211,7 @@ as the other `cloud-itonami-iso3166-*` siblings:
   (Inscripción/Precalificación regime, own text read directly via
   `pdftotext`), and — reusing the SAME Código de Comercio (Decreto N.º
   2-70) citation already established in this repo's own
-  `src/statute/facts.cljc`, never a second, different one — the
+  `src/statute/facts.kotoba`, never a second, different one — the
   Registro Mercantil General requirement. `governor.cljc`'s flagship
   check independently verifies whether an engagement's claimed
   contract value requires RGAE Precalificación while only Inscripción
@@ -224,9 +224,9 @@ as the other `cloud-itonami-iso3166-*` siblings:
   VALUE CEILING test, grounded in RGAE's own statutory object (LCE
   Art. 71: the Registry verifies capacity "relacionadas con los
   negocios con el Estado de que se trate") — see the namespace
-  docstrings and `test/marketentry/governor_contract_test.clj`'s two
+  docstrings and `test/marketentry/governor_contract_test.kotoba`'s two
   contrasting fixtures for the full honest disclosure.
-- `src/statute/facts.cljc` -- general-law catalog (pre-existing, not
+- `src/statute/facts.kotoba` -- general-law catalog (pre-existing, not
   modified by this Wave): Código de Comercio (Decreto N.º 2-70) and
   the Ley de Acceso a la Información Pública (Decreto N.º 57-2008).
 
@@ -261,7 +261,7 @@ Alongside the market-entry / statute catalogs, this repo carries a
 `com-junkawasaki/root`) — national dishes, protected products, beverages,
 crafts, festivals and heritage sites for Guatemala:
 
-- `src/culture/facts.cljc` — the catalog, source of truth (keyed by
+- `src/culture/facts.kotoba` — the catalog, source of truth (keyed by
   uppercase ISO3, mirroring `statute.facts`).
 - `schema/culture.edn` — DataScript schema.
 - `data/culture-tx.edn` — derived DataScript tx-data (regenerated from
